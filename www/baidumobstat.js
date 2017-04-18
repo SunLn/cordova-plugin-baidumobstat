@@ -8,6 +8,12 @@ var errorHandle = function(error) {
 
 module.exports = {
     //print something to the native console
+    initWithAppId: function(appId) {
+        exec(function(){
+            console.log('百度统计初始化成功');
+        }, errorHandle, "BaiduMobStat", "initWithAppId", [appId]);
+    },
+    
     logEvent: function(event, label) {
         exec(null, errorHandle, "BaiduMobStat", "logEvent", [event, label]);
     },
